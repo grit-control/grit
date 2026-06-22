@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "grit"
+dynamic = ["version"]
+description = "GRIT: the agent control plane. In-path policy, flow guard (lethal-trifecta egress control), human approvals, behavioral risk scoring, session budgets, kill switch, flight recorder with deterministic replay + behavioral diff, policy backtesting, and tamper-evident audit for AI agent tool calls (MCP)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "GRIT" }]
+keywords = ["mcp", "ai-agents", "agent-ops", "agent-security", "risk",
+            "governance", "control-plane", "flight-recorder", "replay",
+            "approvals", "kill-switch", "flow-guard", "prompt-injection",
+            "lethal-trifecta", "backtest", "observability"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Security",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: System :: Monitoring",
+]
+
+[project.urls]
+Homepage = "https://github.com/grit-control/grit"
+Repository = "https://github.com/grit-control/grit"
+
+[project.scripts]
+grit = "grit.cli:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "grit.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["grit*"]

@@ -1,0 +1,38 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'><title>GRIT incident — demo__transfer_money</title><style>
+* { box-sizing: border-box; }
+body { margin: 0; padding: 32px 16px; background: #0a0c10; color: #e6e9ef;
+  font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.card { max-width: 680px; margin: 0 auto; background: #12151c;
+  border: 1px solid #232836; border-radius: 14px; overflow: hidden; }
+.head { padding: 22px 26px; border-bottom: 1px solid #232836; }
+.badge { display: inline-block; font-size: 12px; font-weight: 700;
+  letter-spacing: .06em; padding: 4px 10px; border-radius: 999px; }
+.badge.caught { background: #3b1219; color: #ff9aa6; }
+.badge.shadow { background: #2a2410; color: #f4d06f; }
+.badge.none { background: #14241a; color: #7fdca0; }
+.cat { margin: 12px 0 0; font-size: 19px; font-weight: 650; }
+.body { padding: 22px 26px; }
+.row { display: flex; gap: 14px; margin: 0 0 14px; }
+.k { width: 130px; flex: none; color: #8b93a6; font-size: 13px; padding-top: 2px; }
+.v { flex: 1; min-width: 0; }
+code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+pre { margin: 0; padding: 12px 14px; background: #0a0c10; border: 1px solid #232836;
+  border-radius: 8px; overflow-x: auto; font-size: 13px; }
+.tool { font-size: 15px; color: #c4b5fd; font-weight: 600; }
+.reason { padding: 12px 14px; background: #0a0c10; border-left: 3px solid #8b7cf6;
+  border-radius: 6px; color: #d6dae3; }
+.risk { display: inline-block; font-weight: 700; font-size: 13px;
+  padding: 3px 9px; border-radius: 6px; }
+.risk.hi { background: #3b1219; color: #ff9aa6; }
+.risk.mid { background: #2a2410; color: #f4d06f; }
+.risk.lo { background: #14241a; color: #7fdca0; }
+.step { font-size: 15px; }
+.step b { color: #ff9aa6; }
+.foot { padding: 16px 26px; border-top: 1px solid #232836; color: #6b7385;
+  font-size: 12px; display: flex; justify-content: space-between; gap: 12px; }
+.foot code { color: #8b93a6; }
+a { color: #c4b5fd; }
+</style></head><body><div class='card'><div class='head'><span class='badge caught'>CAUGHT</span><div class='cat'>Policy: explicit rule</div></div><div class='body'><div class='row'><div class='k'>Tool call</div><div class='v'><span class='tool'>demo__transfer_money</span><pre>{
+  &quot;amount&quot;: 5000,
+  &quot;recipient&quot;: &quot;X&quot;
+}</pre></div></div><div class='row'><div class='k'>Why</div><div class='v'><div class='reason'>transfers over $1000 are forbidden</div></div></div><div class='row'><div class='k'>Risk score</div><div class='v'><span class='risk lo'>25/100</span></div></div><div class='row'><div class='k'>Step</div><div class='v'><span class='step'>would have died at step <b>3</b> of 19</span></div></div><div class='row'><div class='k'>Replay</div><div class='v'><pre>grit replay s-20260617-151855-12984</pre><div style='color:#6b7385;font-size:12px;margin-top:6px'>re-runs the whole session offline against recorded results — no live tools, no spend</div></div></div></div><div class='foot'><span>audit chain <code>97adb37b32fce4f2...</code> tamper-evident</span><span>2026-06-17 15:18:56 - grit.incident v1</span></div></div><script type='application/json' id='grit-incident'>{"format": "grit.incident", "format_version": "1", "session": "s-20260617-151855-12984", "step": 3, "total_steps": 19, "captured_at": "2026-06-17 15:18:56", "tool": "demo__transfer_money", "arguments": {"amount": 5000, "recipient": "X"}, "arguments_redacted": true, "caught": true, "outcome": "blocked", "failure_class": "policy_block", "category": "Policy: explicit rule", "decision": "deny", "rule_id": "block-large-transfers", "reason": "transfers over $1000 are forbidden", "risk_score": 25, "latency_ms": null, "audit_hash": "97adb37b32fce4f2aaa636f8742059ba5813f0b34ec0291206fc0ab82f2db1fe", "replay_command": "grit replay s-20260617-151855-12984"}</script></body></html>

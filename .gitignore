@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# Test / tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# GRIT runtime artifacts (audit DB + WAL/SHM are deployment-local)
+*.db
+*.db-wal
+*.db-shm
+grit.json
+policies.json
+
+# Local dev scratch
+_dash_js.js
+_dash_smoke.js
+_demo_dash.*
+
+# Editors / OS
+.venv/
+venv/
+.idea/
+.vscode/
+.DS_Store
+
+# Internal strategy & launch docs — kept out of this public repo.
+STRATEGY.md
+COMPANY.md
+INTERVIEWS.md
+LAUNCH.md
+TODOS.md
+launch/READY-TO-POST.md
+launch/README-hero.md
+launch/_preview.png
+launch/make_gif.py
+launch/demo.tape
+
+# Local harness / tooling
+.claude/
